@@ -90,4 +90,67 @@ h1{margin:0;font-size:22px;letter-spacing:.2px}
 .card{
   border:1px solid var(--line);
   background: rgba(15,23,42,.55);
-  border
+  border-radius:16px;
+  padding:14px;
+  cursor:pointer;
+  transition: transform .12s ease, border-color .12s ease;
+}
+.card:hover{transform: translateY(-2px); border-color: rgba(96,165,250,.28)}
+.cardTop{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.badge{
+  font-size:11px;color:#071018;
+  background: linear-gradient(135deg, rgba(96,165,250,.95), rgba(52,211,153,.9));
+  padding:6px 8px;border-radius:999px;font-weight:700;
+  white-space:nowrap;
+}
+.title{margin:10px 0 6px;font-size:16px}
+.desc{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.tag{
+  font-size:11px;color:rgba(229,231,235,.9);
+  border:1px solid rgba(255,255,255,.08);
+  padding:5px 7px;border-radius:999px;
+  background: rgba(2,6,23,.25);
+}
+
+.footer{
+  border-top:1px solid var(--line);
+  padding:16px 0;
+  color:var(--muted);
+  font-size:12px;
+}
+.footer .dot{margin:0 8px}
+.link{color:rgba(96,165,250,.95);text-decoration:none}
+.link:hover{text-decoration:underline}
+
+/* Modal */
+.modal{position:fixed;inset:0;display:none}
+.modal[aria-hidden="false"]{display:block}
+.modal__backdrop{position:absolute;inset:0;background:rgba(0,0,0,.55)}
+.modal__panel{
+  position:relative;
+  width:min(740px, calc(100% - 28px));
+  margin: 60px auto 0;
+  border:1px solid var(--line);
+  background: #0b1220;
+  border-radius:18px;
+  padding:18px 18px 16px;
+  box-shadow: 0 20px 80px rgba(0,0,0,.45);
+}
+@media (max-width: 640px){
+  .modal__panel{margin-top:18px}
+}
+.modal__close{
+  position:absolute; top:10px; right:10px;
+  border:1px solid var(--line);
+  background: rgba(15,23,42,.55);
+  color:var(--ink);
+  border-radius:10px;
+  padding:8px 10px;
+  cursor:pointer;
+}
+.modal h3{margin:0 0 6px;font-size:18px}
+.modal .sub{color:var(--muted);font-size:13px;margin:0 0 12px}
+.modal .sectionTitle{margin:14px 0 6px;font-size:13px;color:rgba(229,231,235,.9)}
+.modal .bul{margin:0;padding-left:18px;color:var(--muted);line-height:1.6}
+.modal .source{margin-top:12px;color:var(--muted);font-size:12px}
