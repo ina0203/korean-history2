@@ -1,38 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>한국 역사 타임리프</title>
-  <style>
-    body { font-family: Pretendard, system-ui; margin: 0; background:#f9fafb; }
-    header { background:#111827; color:white; padding:60px 40px; }
-    section { padding:40px; max-width:1000px; margin:auto; }
-    .era { border-left:4px solid #2563eb; padding-left:16px; margin-bottom:24px; }
-  </style>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TimeLeap Korea | 한국 역사 타임리프</title>
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <header>
-    <h1>한국 역사 타임리프</h1>
-    <p>AI 기반 타임라인 인터랙티브 학습 프로젝트</p>
+  <header class="header">
+    <div class="wrap">
+      <div class="brand">
+        <div class="logo">TL</div>
+        <div>
+          <h1>TimeLeap Korea</h1>
+          <p>한국사 사건을 빠르게 탐색하고, 맥락으로 이해하는 타임라인</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <input id="q" class="input" placeholder="검색: 인물/사건/연도 (예: 세종, 1592, 임진왜란)" />
+        <div class="chips" id="chips"></div>
+      </div>
+    </div>
   </header>
 
-  <section>
-    <div class="era">
-      <h2>삼국시대</h2>
-      <p>고구려 · 백제 · 신라의 성립과 전쟁</p>
+  <main class="wrap">
+    <section class="meta">
+      <div id="count" class="count"></div>
+      <button id="reset" class="btn">전체 보기</button>
+    </section>
+
+    <section id="list" class="grid"></section>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal__backdrop" id="closeBackdrop"></div>
+    <div class="modal__panel" role="dialog" aria-modal="true">
+      <button class="modal__close" id="closeBtn">✕</button>
+      <div id="modalBody"></div>
     </div>
-    <div class="era">
-      <h2>고려</h2>
-      <p>후삼국 통일과 몽골 침입</p>
+  </div>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>© TimeLeap Korea</span>
+      <span class="dot">·</span>
+      <a class="link" href="https://github.com/ina0203/korean-history2" target="_blank" rel="noreferrer">GitHub</a>
     </div>
-    <div class="era">
-      <h2>조선</h2>
-      <p>세종대왕, 임진왜란, 근대화</p>
-    </div>
-    <div class="era">
-      <h2>근현대</h2>
-      <p>일제강점기, 해방, 대한민국</p>
-    </div>
-  </section>
+  </footer>
+
+  <script src="./app.js"></script>
 </body>
 </html>
